@@ -14,9 +14,9 @@ if ($conn->connect_error) {
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 if ($conn->query($sql) === TRUE) {
-    echo "Database ready<br>";
+    // Database ready (suppressed output)
 } else {
-    echo "Error creating database: " . $conn->error . "<br>";
+    // Error creating database (suppressed output)
 }
 
 $conn->select_db($dbname);
@@ -29,7 +29,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
 )";
 
 if ($conn->query($sql) === FALSE) {
-    echo "Error creating users table: " . $conn->error . "<br>";
+    // Error creating users table (suppressed output)
 }
 
 $sql = "CREATE TABLE IF NOT EXISTS messages (
@@ -40,8 +40,7 @@ $sql = "CREATE TABLE IF NOT EXISTS messages (
 )";
 
 if ($conn->query($sql) === FALSE) {
-    echo "Error creating messages table: " . $conn->error . "<br>";
+    // Error creating messages table (suppressed output)
 }
 
 session_start();
-?>
